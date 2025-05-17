@@ -801,10 +801,17 @@ body {
 .section-title {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
+
   /* gradiente horizontal primario → secundario */
   background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+
+  /* definición estándar para background-clip */
+  background-clip: text;
+
+  /* WebKit */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   margin-bottom: 2rem;
 }
 .hero {
