@@ -927,3 +927,85 @@ body {
 .footer-credit-blue {
   color: #0098ff;
 }
+/* Quiénes Somos */
+.about p,
+.mission p,
+.vision p {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  margin-bottom: 1.5rem;
+}
+.subsection-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.values-list li {
+  margin-bottom: 0.75rem;
+}
+.values-list strong {
+  color: var(--color-primary);
+}
+/* ==========================
+   Contacto (página dedicada)
+   ========================== */
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.contact-map {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: .5rem;
+  margin-top: var(--spacing);
+}
+
+/* Reuso: .contact-form y .contact-info ya están definidos */
+/* ==========================
+   Servicios: ajustar tamaño de iconos
+   ========================== */
+.services-detail .service-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+}
+
+.services-detail .service-icon img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+/* Servicios: grid de cards con icono encima */
+.services-detail {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.services-detail .service-item {
+  text-align: center;
+}
+
+.services-detail .service-icon {
+  margin: 0 auto 1rem; /* centrar */
+  width: 60px;
+  height: 60px;
+}
+
+.services-detail .service-icon img {
+  width: 100%;
+  height: auto;
+}

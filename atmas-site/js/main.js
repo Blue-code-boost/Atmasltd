@@ -105,3 +105,15 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.animate').forEach(el => {
   observer.observe(el);
 });
+
+// Smooth scroll para anclas locales
+document.querySelectorAll('a[href*="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const url = new URL(link.href);
+    if (url.pathname === window.location.pathname) {
+      e.preventDefault();
+      const target = document.getElementById(url.hash.slice(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
