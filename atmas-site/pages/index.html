@@ -8,6 +8,7 @@
     <meta name="description" content="Líderes en suministros marítimos con entrega rápida y soporte 24/7">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -24,23 +25,23 @@
             <!-- Navegación principal -->
             <nav>
                 <ul class="nav-list">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="has-dropdown">
-                        <a href="servicios.html">Servicios ▾</a>
+                        <a href="servicios.html">Services ▾</a>
                         <ul class="dropdown">
-                            <li><a href="servicios.html#consumibles">Consumibles</a></li>
-                            <li><a href="servicios.html#repuestos">Repuestos</a></li>
-                            <li><a href="servicios.html#soporte">Soporte</a></li>
+                            <li><a href="servicios.html#consumibles">Consumables</a></li>
+                            <li><a href="servicios.html#repuestos">Spare Parts</a></li>
+                            <li><a href="servicios.html#soporte">Support</a></li>
                         </ul>
                     </li>
-                   <li><a href="about.html">Quiénes somos</a></li>
-                    <li><a href="index.html#gallery">Galería</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#faq">FAQ</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html">Contact</a></li>
                 </ul>
             </nav>
-
-            <a href="assets/ATMAS-Catalogo.pdf" class="btn-secondary btn-catalogo">Descarga Catálogo</a>
+            <!-- boton de catalogo 
+      <a href="assets/ATMAS-Catalogo.pdf" class="btn-secondary btn-catalogo">Descarga Catálogo</a>-->
         </div>
     </header>
 
@@ -48,166 +49,203 @@
     <section id="hero" class="hero animate">
         <div class="overlay"></div>
         <div class="container hero-content">
-            <h1>Líderes en Suministros Marítimos</h1>
-            <p>Entrega rápida, soporte 24/7 y calidad garantizada para tu flota.</p>
-            <a href="servicios.html" class="btn-primary">Ver Servicios</a>
+            <h1>Leaders in Maritime Supplies</h1>
+            <p>Fast delivery, 24/7 support, and guaranteed quality for your fleet.</p>
+            <a href="servicios.html" class="btn-primary">View Services</a>
         </div>
     </section>
 
+    <!-- video presentación -->
+    <section class="video-presentation container" style="text-align:center; padding: 4rem 0;">
+        <h2 class="section-title">Welcome to ATMAS</h2>
+        <div id="video-wrapper"
+            style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
+            <iframe id="atmas-video" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                style="position:absolute; top:0; left:0; width:100%; height:100%;">
+            </iframe>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const videoId = "3NcnroXUc6E?si=35y9zfMkA-bAMff2"; // 🔁 Reemplaza con el ID real de tu video
+            const baseUrl = `https://www.youtube.com/embed/${videoId}`;
+            const iframe = document.getElementById("atmas-video");
+
+            const alreadyPlayed = localStorage.getItem("atmasVideoPlayed");
+
+            // Si es la primera vez, autoplay con mute (requerido por navegadores)
+            const autoplayParams = alreadyPlayed
+                ? ""
+                : "?autoplay=1&mute=1";
+
+            const src = `https://www.youtube.com/embed/${videoId}${autoplayParams}`;
+
+            iframe.src = src;
+
+            if (!alreadyPlayed) {
+                localStorage.setItem("atmasVideoPlayed", "true");
+            }
+        });
+    </script>
 
     <!-- Servicios Destacados -->
-    <section id="servicios" class="services container animate">
-        <h2 class="section-title">Servicios Destacados</h2>
+    <section id="services" class="services container animate">
+        <h2 class="section-title">Featured Services</h2>
         <div class="cards">
             <div class="card">
                 <div class="card-icon">
-                    <img src="../assets/icons/barco.png" alt="Icono de barco">
+                    <img src="../assets/icons/barco.png" alt="Ship icon">
                 </div>
-                <h3 class="card-title">Consumibles</h3>
-                <p class="card-text">Suministro de combustibles y lubricantes marinos con certificación.</p>
+                <h3 class="card-title">Consumables</h3>
+                <p class="card-text">Supply of certified marine fuels and lubricants.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
-                    <img src="../assets/icons/engranaje.png" alt="Icono de engranaje">
+                    <img src="../assets/icons/engranaje.png" alt="Gear icon">
                 </div>
-                <h3 class="card-title">Repuestos</h3>
-                <p class="card-text">Piezas originales y compatibles para mantenimiento de tu flota.</p>
+                <h3 class="card-title">Spare Parts</h3>
+                <p class="card-text">Original and compatible parts for fleet maintenance.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
-                    <img src="../assets/icons/soporte.png" alt="Icono de soporte">
+                    <img src="../assets/icons/soporte.png" alt="Support icon">
                 </div>
-                <h3 class="card-title">Soporte 24/7</h3>
-                <p class="card-text">Asistencia técnica inmediata, tanto en puerto como en alta mar.</p>
+                <h3 class="card-title">24/7 Support</h3>
+                <p class="card-text">Immediate technical assistance in port and at sea.</p>
             </div>
         </div>
     </section>
 
 
+
     <!-- Proceso de Trabajo -->
-    <section id="proceso" class="process container animate">
-        <h2 class="section-title">Cómo Trabajamos</h2>
+    <section id="process" class="process container animate">
+        <h2 class="section-title">How We Work</h2>
         <ul class="process-list">
             <li class="process-item">
                 <div class="process-icon">
-                    <img src="../assets/icons/cotización.png" alt="Icono de cotización">
+                    <img src="../assets/icons/cotización.png" alt="Quotation icon">
                 </div>
-                <h3 class="process-step">1. Cotización</h3>
-                <p class="process-text">Recibes propuesta en menos de 24 horas.</p>
+                <h3 class="process-step">1. Quotation</h3>
+                <p class="process-text">You receive a proposal in less than 24 hours.</p>
             </li>
             <li class="process-item">
                 <div class="process-icon">
-                    <img src="../assets/icons/logística2.png" alt="Icono de logística">
+                    <img src="../assets/icons/logística2.png" alt="Logistics icon">
                 </div>
-                <h3 class="process-step">2. Logística</h3>
-                <p class="process-text">Coordinamos transporte marítimo o terrestre.</p>
+                <h3 class="process-step">2. Logistics</h3>
+                <p class="process-text">We coordinate maritime or land transportation.</p>
             </li>
             <li class="process-item">
                 <div class="process-icon">
-                    <img src="../assets/icons/entrega.png" alt="Icono de entrega">
+                    <img src="../assets/icons/entrega.png" alt="Delivery icon">
                 </div>
-                <h3 class="process-step">3. Entrega</h3>
-                <p class="process-text">Entregamos en tiempo y forma.</p>
+                <h3 class="process-step">3. Delivery</h3>
+                <p class="process-text">We deliver on time and as agreed.</p>
             </li>
             <li class="process-item">
                 <div class="process-icon">
-                    <img src="../assets/icons/ventas.png" alt="Icono de soporte">
+                    <img src="../assets/icons/ventas.png" alt="Support icon">
                 </div>
-                <h3 class="process-step">4. Soporte</h3>
-                <p class="process-text">Atención post-venta y asesoría continua.</p>
+                <h3 class="process-step">4. Support</h3>
+                <p class="process-text">Post-sales service and ongoing assistance.</p>
             </li>
         </ul>
     </section>
 
 
+
     <!-- Casos de Éxito / Testimonios -->
-    <section id="testimonios" class="testimonials container animate">
-        <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+    <section id="testimonials" class="testimonials container animate">
+        <h2 class="section-title">What Our Clients Say</h2>
 
         <div class="testimonial-wrapper">
-            <button class="testimonial-nav prev" aria-label="Anterior testimonio">‹</button>
+            <button class="testimonial-nav prev" aria-label="Previous testimonial">‹</button>
 
             <div class="testimonial-carousel">
                 <div class="testimonial">
-                    <p class="testimonial-text">“Excelente servicio, recibimos todo a tiempo y en perfectas condiciones.
-                        ¡Muy recomendados!”</p>
-                    <span class="testimonial-author">— Capitán Pérez</span>
+                    <p class="testimonial-text">“Excellent service, we received everything on time and in perfect
+                        condition. Highly recommended!”</p>
+                    <span class="testimonial-author">— Captain Pérez</span>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">“Su soporte 24/7 marcó la diferencia cuando tuvimos una emergencia en
-                        alta mar.”</p>
-                    <span class="testimonial-author">— Naviera Atlantic</span>
+                    <p class="testimonial-text">“Their 24/7 support made the difference when we had an emergency at
+                        sea.”</p>
+                    <span class="testimonial-author">— Atlantic Shipping</span>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">“La calidad de los repuestos es de primera. Sin duda volveremos a
-                        trabajar con ATMAS Ltd.”</p>
-                    <span class="testimonial-author">— Ingeniero López</span>
+                    <p class="testimonial-text">“Top-quality spare parts. We’ll definitely work with ATMAS Ltd. again.”
+                    </p>
+                    <span class="testimonial-author">— Engineer López</span>
                 </div>
-                <!-- Añade más .testimonial según necesites -->
             </div>
 
-            <button class="testimonial-nav next" aria-label="Siguiente testimonio">›</button>
+            <button class="testimonial-nav next" aria-label="Next testimonial">›</button>
         </div>
     </section>
+
 
 
     <!-- Galería de Proyectos -->
     <section id="gallery" class="gallery container animate">
-        <h2 class="section-title">Galería de Proyectos</h2>
+        <h2 class="section-title">Project Gallery</h2>
         <div class="gallery-grid">
-            <img src="../assets/images/Foto1.jpg" alt="Proyecto marítimo en puerto" />
-            <img src="../assets/images/galeria 2.png" alt="Carga de contenedores en barco" />
-            <img src="../assets/images/Galeria 1.png" alt="Reparación de casco en astillero" />
-            <img src="../assets/images/foto4.jpg" alt="Suministros siendo descargados" />
-            <img src="../assets/images/foto5.jpg" alt="Vista aérea de flota" />
+            <img src="../assets/images/Foto1.jpg" alt="Maritime project at port" />
+            <img src="../assets/images/galeria 2.png" alt="Container loading on ship" />
+            <img src="../assets/images/Galeria 1.png" alt="Hull repair at shipyard" />
+            <img src="../assets/images/foto4.jpg" alt="Supplies being unloaded" />
+            <img src="../assets/images/foto5.jpg" alt="Aerial view of fleet" />
         </div>
     </section>
 
+
     <!-- FAQ -->
     <section id="faq" class="faq container animate">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="accordion">
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    ¿Cómo solicito una cotización?
+                    How do I request a quote?
                 </button>
                 <div class="accordion-content">
-                    <p>Completa el formulario de contacto o envíanos un email a <a
-                            href="mailto:info@atmasltd.com">info@atmasltd.com</a> con los detalles de lo que necesitas.
-                    </p>
+                    <p>Fill out the contact form or email us at <a href="mailto:info@atmasltd.com">info@atmasltd.com</a>
+                        with the details of your request.</p>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    ¿Cuánto tarda la entrega?
+                    How long does delivery take?
                 </button>
                 <div class="accordion-content">
-                    <p>Generalmente entre 3 y 7 días hábiles, dependiendo de la ubicación y urgencia. Podemos coordinar
-                        envíos exprés si lo requieres.</p>
+                    <p>Delivery time depends on the quote. Once approved, deliveries can be made in as little as 14
+                        hours depending on availability and location. We offer express logistics when required.</p>
+
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    ¿Ofrecen soporte en alta mar?
+                    Do you offer offshore support?
                 </button>
                 <div class="accordion-content">
-                    <p>Sí, nuestro servicio 24/7 incluye asistencia remota y, si es necesario, desplazamiento de nuestro
-                        equipo técnico a tu ubicación.</p>
+                    <p>Yes, our 24/7 service includes remote assistance and, if necessary, deployment of our technical
+                        team to your location.</p>
                 </div>
             </div>
-            <!-- Añade más items según necesites -->
         </div>
     </section>
+
 
 
     <!-- Contacto -->
     <section id="contact" class="contact container animate">
-        <h2 class="section-title">Contáctanos</h2>
+        <h2 class="section-title">Contact Us</h2>
         <div class="contact-grid">
-            <!-- Formulario -->
+
+            <!-- Contact Form -->
             <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
-                    <label for="name">Nombre</label>
+                    <label for="name">Name</label>
                     <input type="text" id="name" name="name" required />
                     <span class="error-message" id="error-name"></span>
                 </div>
@@ -217,28 +255,28 @@
                     <span class="error-message" id="error-email"></span>
                 </div>
                 <div class="form-group">
-                    <label for="message">Mensaje</label>
+                    <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                     <span class="error-message" id="error-message"></span>
                 </div>
-                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                <button type="submit" class="btn-primary">Send Message</button>
                 <p class="form-feedback" aria-live="polite"></p>
             </form>
 
-            <!-- Información de contacto -->
-             
+            <!-- Contact Info -->
             <div class="contact-info">
-                  <p><strong>Teléfono:</strong> +507 6981-6860</p>
-            <p><strong>Email:</strong> info@atmasltd.com</p>
-            <p><strong>Dirección:</strong> Edificio Metro Park Group</p>
-            <div class="social">
-              <a href="https://www.instagram.com/atmas_pa?igsh=cXV1ODF4ZTZ1eTRw" aria-label="Instagram">Ig</a>
-            </div>
+                <p><strong>Phone:</strong> +507 6981-6860</p>
+                <p><strong>Email:</strong> info@atmasltd.com</p>
+                <p><strong>Address:</strong> Metro Park Group Building</p>
+                <div class="social">
+                    <a href="https://www.instagram.com/atmas_pa?igsh=cXV1ODF4ZTZ1eTRw" aria-label="Instagram">Ig</a>
+                </div>
             </div>
         </div>
     </section>
+
     <!-- Footer -->
-    <footer class="site-footer animate">
+    <footer class="site-footer ">
         <div class="container footer-inner">
             <div class="container footer-inner">
                 <div class="footer-brand">
@@ -246,19 +284,19 @@
                         <img src="../assets/icons/015689_62ae2ac33f494f949f41ab5fe8f0bece~mv2.png" alt="ATMAS Ltd. Logo"
                             class="logo-img">
                         <p class="footer-copy">
-                            &copy; 2025 ATMAS Ltd. Todos los derechos reservados.<br>
-                            Desarrollado por <span class="footer-credit"><span class="footer-credit-blue">Blue</span>
+                            &copy; 2025 ATMAS Ltd. All rights reserved.<br>
+                            Developed by <span class="footer-credit"><span class="footer-credit-blue">Blue</span>
                                 Code</span>
                         </p>
                 </div>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="index.html#hero">Inicio</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="about.html">Quiénes somos</a></li>
-                        <li><a href="index.html#gallery">Galería</a></li>
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="servicios.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
                         <li><a href="index.html#faq">FAQ</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="footer-social">
@@ -267,6 +305,12 @@
             </div>
     </footer>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init('of9nQTVv0vpzJ7I5s'); // Tu Public Key
+    </script>
+    
     <script src="../js/main.js"></script>
     <script src="../js/contact-form.js"></script>
 </body>

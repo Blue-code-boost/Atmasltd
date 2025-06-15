@@ -34,8 +34,9 @@ body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* cambio clave */
   padding: var(--spacing) 0;
+  gap: 2rem; /* opcional: separa logo y nav */
 }
 .logo {
   font-family: 'Poppins', sans-serif;
@@ -1008,4 +1009,39 @@ body {
 .services-detail .service-icon img {
   width: 100%;
   height: auto;
+}
+
+/* Sección de presentación con video */
+.video-presentation {
+  background: var(--gray-light);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.video-presentation h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+/* Contenedor responsivo estilo ATMAS */
+#video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.5rem;
 }
